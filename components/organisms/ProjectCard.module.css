@@ -1,0 +1,41 @@
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+}
+
+/* Flip column order when imageSide="right" */
+.reverse .imageCol {
+  order: 2;
+}
+
+.reverse .panel {
+  order: 1;
+}
+
+.imageCol {
+  overflow: hidden;
+  /* aspect-ratio sets minimum height; grid stretch takes over if panel is taller */
+  aspect-ratio: 4 / 3;
+}
+
+.imageCol img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 300ms ease;
+}
+
+.card:hover .imageCol img {
+  transform: scale(1.01);
+}
+
+.panel {
+  display: flex;
+  align-items: center;
+  padding: 3rem;
+}
