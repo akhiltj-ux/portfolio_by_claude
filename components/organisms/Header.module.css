@@ -18,6 +18,10 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
+.topBarOpen {
+  border-bottom: none;
+}
+
 /* ── Logo link wrapper (Fix 1) ───────────────────────────── */
 .logoLink {
   display: flex;
@@ -98,12 +102,6 @@
     padding: 1.25rem;
   }
 
-  /* Pull the overlay up 1px so its background covers the topBar border.
-     When closed, no overlay exists in the DOM and the border shows normally. */
-  .overlay {
-    margin-top: -1px;
-  }
-
   .desktopNav,
   .desktopResume {
     display: none;
@@ -133,11 +131,10 @@
 
 /* ── Mobile overlay ──────────────────────────────────────── */
 .overlay {
-  position: fixed;
+  position: absolute;
   left: 0;
   width: 100%;
   background-color: var(--color-bg);
-  z-index: 99;
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
