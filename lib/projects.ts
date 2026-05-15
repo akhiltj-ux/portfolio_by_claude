@@ -1,35 +1,35 @@
 export type Project = {
   id: string;
   image: string;
+  alt: string;
   title: string;
   tags: string[];
-  bgColor: 'peach' | 'mint' | 'lavender';
   href: string;
 };
 
 export const projects: Project[] = [
   {
     id: '01',
-    image: '/images/project-01.jpg',
-    title: 'Redesigning the Onboarding Flow',
+    image: '/images/Dummy Image.png',
+    alt: 'Onboarding flow screens showing step-by-step user registration',
+    title: 'Reimagining Competitive Exam Preparation: An AI Powered Study Tool for UPSC Aspirants',
     tags: ['UX Research', 'Interaction Design', 'Figma'],
-    bgColor: 'peach',
     href: '/work/onboarding',
   },
   {
     id: '02',
-    image: '/images/project-02.jpg',
-    title: 'Design System at Scale',
+    image: '/images/Dummy Image.png',
+    alt: 'Design system component library with tokens and documentation',
+    title: 'Reimagining Competitive Exam Preparation: An AI Powered Study Tool for UPSC Aspirants',
     tags: ['Design Systems', 'Component Library', 'Documentation'],
-    bgColor: 'mint',
     href: '/work/design-system',
   },
   {
     id: '03',
-    image: '/images/project-03.jpg',
-    title: 'Mobile Navigation Patterns',
+    image: '/images/Dummy Image.png',
+    alt: 'Mobile navigation patterns with bottom tab bar and gesture interactions',
+    title: 'Reimagining Competitive Exam Preparation: An AI Powered Study Tool for UPSC Aspirants',
     tags: ['Mobile UX', 'Prototyping', 'User Testing'],
-    bgColor: 'lavender',
     href: '/work/navigation',
   },
 ];

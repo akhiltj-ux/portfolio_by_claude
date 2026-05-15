@@ -1,0 +1,13 @@
+.tag {
+  display: inline-block;
+  font-family: var(--font-geist-mono);
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: normal;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  color: #767676;
+  border: 1px solid rgba(118, 118, 118, 0.2);
+  border-radius: 0;
+  padding: 0.25rem 0.5rem;
+}

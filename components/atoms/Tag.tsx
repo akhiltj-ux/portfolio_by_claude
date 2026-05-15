@@ -1,13 +1,9 @@
-import { ReactNode } from 'react';
+import styles from './Tag.module.css';
 
 type TagProps = {
-  children: ReactNode;
+  label: string;
 };
 
-export default function Tag({ children }: TagProps) {
-  return (
-    <span className="inline-block font-mono text-[11px] uppercase tracking-[0.05em] border border-current rounded-full px-3 py-1">
-      {children}
-    </span>
-  );
+export default function Tag({ label }: TagProps) {
+  return <span className={styles.tag}>{label}</span>;
 }

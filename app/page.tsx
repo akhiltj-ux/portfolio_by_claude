@@ -1,7 +1,12 @@
-import { Header } from '@/components/organisms';
+import { Header, Hero, ProjectGrid, Footer } from '@/components/organisms';
 
 export default function Home() {
   return (
-    <Header activePath="/" />
+    <>
+      <Header activePath="/" />
+      <Hero />
+      <ProjectGrid />
+      <Footer />
+    </>
   );
 }

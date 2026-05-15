@@ -2,7 +2,8 @@ import { projects } from '@/lib/projects';
 import ProjectCard from './ProjectCard';
 import styles from './ProjectGrid.module.css';
 
-/** Renders all projects as a flush vertical stack, alternating image side. */
+const bgColors = ['#FFECE5', '#E5FDEB', '#F0E5FF'];
+
 export default function ProjectGrid() {
   return (
     <div className={styles.grid}>
@@ -10,9 +11,10 @@ export default function ProjectGrid() {
         <ProjectCard
           key={project.id}
           image={project.image}
+          alt={project.alt}
           title={project.title}
           tags={project.tags}
-          bgColor={project.bgColor}
+          bgColor={bgColors[index % bgColors.length]}
           href={project.href}
           imageSide={index % 2 === 0 ? 'left' : 'right'}
         />

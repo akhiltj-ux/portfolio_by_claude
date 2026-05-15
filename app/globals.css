@@ -11,6 +11,9 @@
   --color-lavender: #e6dcf0;
   --font-serif: var(--font-eb-garamond);
   --font-mono: var(--font-jetbrains-mono);
+  --font-geist: 'Geist', sans-serif;
+  --font-geist-mono: 'Geist Mono', monospace;
+  --font-tiempos: 'Test Tiempos Text', serif;
 }
 
 *,

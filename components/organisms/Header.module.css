@@ -1,12 +1,166 @@
+/* ── Outer wrapper (sticky shell, no border) ─────────────── */
 .header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 2.5rem;
   position: sticky;
   top: 0;
   background-color: var(--color-bg);
   z-index: 100;
+}
+
+/* ── Top bar row (flex layout + border) ──────────────────── */
+/* Fix 3: border lives here so it stays visible regardless    */
+/* of whether an overlay is rendered inside or outside header */
+.topBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* ── Logo link wrapper (Fix 1) ───────────────────────────── */
+.logoLink {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Override Logo atom Tailwind utilities (specificity 0,1,1 > 0,1,0) */
+.logoLink :global(span) {
+  font-family: var(--font-geist-mono);
+  font-weight: 400;
+  font-size: 0.8125rem;
+  line-height: normal;
+  letter-spacing: 0;
+  color: #000000;
+  transition: color 150ms ease, font-weight 150ms ease;
+}
+
+.logoLink:hover :global(span) {
+  color: #ff4000;
+  font-weight: 500;
+}
+
+/* ── Nav links: HOME, WORK, ABOUT ────────────────────────── */
+.desktopNav :global(a) {
+  font-family: var(--font-geist-mono);
+  font-weight: 400;
+  font-size: 0.8125rem;
+  line-height: normal;
+  letter-spacing: 0;
+  color: #767676;
+  transition: color 150ms ease, font-weight 150ms ease;
+}
+
+/* Covers both hover (inactive) and active states */
+.desktopNav :global(a:hover),
+.desktopNav :global(a.text-accent) {
+  color: #ff4000;
+  font-weight: 500;
+}
+
+/* ── Resume link ─────────────────────────────────────────── */
+.desktopResume :global(a) {
+  font-family: var(--font-geist-mono);
+  font-weight: 400;
+  font-size: 0.8125rem;
+  line-height: normal;
+  letter-spacing: 0;
+  color: #767676;
+  transition: color 150ms ease, font-weight 150ms ease;
+}
+
+.desktopResume :global(a:hover) {
+  color: #ff4000;
+  font-weight: 500;
+}
+
+/* ── MENU / CLOSE button ─────────────────────────────────── */
+.menuBtn {
+  display: none;
+}
+
+/* ── Tablet: 768px–1023px ────────────────────────────────── */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .topBar {
+    padding: 1.25rem;
+  }
+
+  .desktopNav :global(nav) {
+    gap: 1.5rem;
+  }
+}
+
+/* ── Mobile: below 768px ─────────────────────────────────── */
+@media (max-width: 767px) {
+  .topBar {
+    padding: 1.25rem;
+  }
+
+  /* Pull the overlay up 1px so its background covers the topBar border.
+     When closed, no overlay exists in the DOM and the border shows normally. */
+  .overlay {
+    margin-top: -1px;
+  }
+
+  .desktopNav,
+  .desktopResume {
+    display: none;
+  }
+
+  /* Fix 2: default colour is #767676, not #000000 */
+  .menuBtn {
+    display: block;
+    font-family: var(--font-geist-mono);
+    font-weight: 400;
+    font-size: 0.8125rem;
+    line-height: normal;
+    letter-spacing: 0;
+    color: #767676;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: color 150ms ease, font-weight 150ms ease;
+  }
+
+  .menuBtn:hover {
+    color: #ff4000;
+    font-weight: 500;
+  }
+}
+
+/* ── Mobile overlay ──────────────────────────────────────── */
+.overlay {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-bg);
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.overlayItem {
+  padding: 1.25rem 1.5rem;
+}
+
+/* Overlay nav links — same rules as desktop nav */
+.overlayItem :global(a) {
+  display: block;
+  font-family: var(--font-geist-mono);
+  font-weight: 400;
+  font-size: 0.8125rem;
+  line-height: normal;
+  letter-spacing: 0;
+  color: #767676;
+  transition: color 150ms ease, font-weight 150ms ease;
+}
+
+.overlayItem :global(a:hover),
+.overlayItem :global(a.text-accent) {
+  color: #ff4000;
+  font-weight: 500;
 }

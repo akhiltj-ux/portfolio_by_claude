@@ -1,22 +1,20 @@
 import Link from 'next/link';
-import { ProjectInfo } from '@/components/molecules';
+import { ProjectMeta } from '@/components/molecules';
 import styles from './ProjectCard.module.css';
 
 type ProjectCardProps = {
   image: string;
+  alt: string;
   title: string;
   tags: string[];
-  bgColor: 'peach' | 'mint' | 'lavender';
+  bgColor: string;
   imageSide: 'left' | 'right';
   href: string;
 };
 
-/**
- * Full-width two-column card: image column + coloured info panel.
- * imageSide controls which column leads. Entire card is a navigable link.
- */
 export default function ProjectCard({
   image,
+  alt,
   title,
   tags,
   bgColor,
@@ -30,13 +28,11 @@ export default function ProjectCard({
     >
       <div className={styles.imageCol}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={image} alt={title} />
+        <img src={image} alt={alt} className={styles.image} />
       </div>
-      <div
-        className={styles.panel}
-        style={{ backgroundColor: `var(--color-${bgColor})` }}
-      >
-        <ProjectInfo title={title} tags={tags} />
+      <div className={styles.panel} style={{ backgroundColor: bgColor }}>
+        <ProjectMeta tags={tags} />
+        <h3 className={styles.title}>{title}</h3>
       </div>
     </Link>
   );
