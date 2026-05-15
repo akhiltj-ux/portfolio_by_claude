@@ -31,7 +31,7 @@ export default function Header({ activePath }: HeaderProps) {
 
   return (
     <header className={styles.header}>
-      <div className={`${styles.topBar}${isMenuOpen ? ` ${styles.topBarOpen}` : ''}`}>
+      <div className={styles.topBar}>
         <Link href="/" className={styles.logoLink}>
           <Logo />
         </Link>

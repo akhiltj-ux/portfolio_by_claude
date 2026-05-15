@@ -18,10 +18,6 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-.topBarOpen {
-  border-bottom: none;
-}
-
 /* ── Logo link wrapper (Fix 1) ───────────────────────────── */
 .logoLink {
   display: flex;
