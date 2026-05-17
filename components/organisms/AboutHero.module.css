@@ -86,7 +86,10 @@
 
 @media (max-width: 47.9375rem) {
   .hero {
-    gap: 2rem;
+    padding-top: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    gap: 0;
   }
 
   .headline {
