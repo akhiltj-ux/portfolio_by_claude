@@ -1,0 +1,80 @@
+.hero {
+  display: flex;
+  align-items: center;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  gap: 5rem;
+  max-width: 80.25rem;
+  margin-inline: auto;
+}
+
+.left {
+  flex: 0 0 60%;
+  max-width: 39.25rem;
+}
+
+.headline {
+  font-family: var(--font-tiempos);
+  font-weight: 500;
+  font-size: 5.1875rem;
+  line-height: 1.193;
+  letter-spacing: -0.01em;
+  color: #000000;
+  margin: 0;
+}
+
+.headlineNormal {
+  display: block;
+  font-style: normal;
+}
+
+.headlineItalic {
+  display: block;
+  font-style: italic;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.paragraph {
+  font-family: var(--font-geist);
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.571;
+  letter-spacing: 0;
+  color: #000000;
+  margin: 0;
+}
+
+.paragraphGapLarge {
+  margin-top: 1rem;
+}
+
+.placeholder {
+  flex: 0 0 40%;
+}
+
+.year {
+  color: #ff4000;
+}
+
+.inlineLink {
+  font-family: var(--font-geist-mono);
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.571;
+  letter-spacing: 0;
+  color: #767676;
+  text-decoration: none;
+  transition: color 150ms ease;
+}
+
+.inlineLink:hover {
+  color: #ff4000;
+}
