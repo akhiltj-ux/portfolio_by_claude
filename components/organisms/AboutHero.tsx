@@ -5,9 +5,12 @@ import styles from "./AboutHero.module.css";
 export default function AboutHero() {
   return (
     <section className={styles.hero}>
+      <div className={styles.placeholder}>
+        <PolaroidStack />
+      </div>
       <div className={styles.left}>
         <h1 className={styles.headline}>
-          <span className={styles.headlineNormal}>I'm an engineer</span>
+          <span className={styles.headlineNormal}>I&apos;m an engineer</span>
           <span className={styles.headlineItalic}>turned designer</span>
         </h1>
         <div className={styles.body}>
@@ -41,8 +44,8 @@ export default function AboutHero() {
           </p>
           <p className={styles.paragraph}>
             Outside of design, I enjoy working out, cooking, watching a
-            sitcom/anime, or building a side project. I've been a top listener
-            of{" "}
+            sitcom/anime, or building a side project. I&apos;ve been a top
+            listener of{" "}
             <Link href="/about" className={styles.inlineLink}>
               AKON
             </Link>{" "}
@@ -65,9 +68,6 @@ export default function AboutHero() {
             .
           </p>
         </div>
-      </div>
-      <div className={styles.placeholder}>
-        <PolaroidStack />
       </div>
     </section>
   );

@@ -12,7 +12,6 @@
 
 .left {
   flex: 0 0 60%;
-  max-width: 39.25rem;
 }
 
 .headline {
@@ -58,6 +57,43 @@
 
 .placeholder {
   flex: 0 0 40%;
+  order: 1;
+}
+
+@media (max-width: 63.9375rem) {
+  .hero {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .left {
+    flex: none;
+    width: 100%;
+  }
+
+  .placeholder {
+    order: 0;
+    flex: none;
+    width: 100%;
+  }
+
+  .headline {
+    font-size: 3.890625rem;
+    line-height: 1.193;
+    letter-spacing: -0.01em;
+  }
+}
+
+@media (max-width: 47.9375rem) {
+  .hero {
+    gap: 2rem;
+  }
+
+  .headline {
+    font-size: 3.043125rem;
+    line-height: 1.144;
+    letter-spacing: -0.01em;
+  }
 }
 
 .year {
