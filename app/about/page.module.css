@@ -3,3 +3,9 @@
   margin-bottom: 7.5rem;
   overflow-x: hidden;
 }
+
+@media (max-width: 47.9375rem) {
+  .main {
+    margin-top: 0;
+  }
+}
