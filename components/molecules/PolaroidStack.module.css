@@ -41,3 +41,13 @@
   object-fit: cover;
   display: block;
 }
+
+@media (max-width: 47.9375rem) {
+  .polaroid {
+    width: 22rem;
+  }
+
+  .imageWrapper {
+    height: 17.5rem;
+  }
+}
