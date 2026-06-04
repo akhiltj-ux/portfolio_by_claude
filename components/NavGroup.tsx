@@ -6,12 +6,11 @@ type NavGroupProps = {
 };
 
 const links = [
-  { label: 'HOME', href: '/' },
-  { label: 'WORK', href: '/#projects' },
+  { label: 'WORK', href: '/' },
   { label: 'ABOUT', href: '/about' },
+  { label: 'CONTACT', href: '/contact' },
 ] as const;
 
-/** Primary site navigation rendered as a horizontal row of NavLink atoms. */
 export default function NavGroup({ activePath }: NavGroupProps) {
   return (
     <nav className={styles.nav}>

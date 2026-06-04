@@ -11,9 +11,9 @@ type HeaderProps = {
 };
 
 const mobileLinks = [
-  { href: '/', label: 'HOME' },
-  { href: '/#projects', label: 'WORK' },
+  { href: '/', label: 'WORK' },
   { href: '/about', label: 'ABOUT' },
+  { href: '/contact', label: 'CONTACT' },
   { href: '/resume', label: 'RESUME' },
 ] as const;
 
@@ -58,7 +58,11 @@ export default function Header({ activePath }: HeaderProps) {
         <nav className={styles.overlay}>
           {mobileLinks.map(({ href, label }) => (
             <div key={href} className={styles.overlayItem}>
-              <NavLink href={href} active={activePath === href} onClick={closeMenu}>
+              <NavLink
+                href={href}
+                active={activePath === href}
+                onClick={closeMenu}
+              >
                 {label}
               </NavLink>
             </div>

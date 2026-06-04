@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import styles from './Footer.module.css';
 
@@ -10,7 +12,12 @@ export default function Footer() {
         <Link href="mailto:hello@akhiltj.com" className={styles.navLink}>EMAIL</Link>
         <Link href="/resume" className={styles.navLink}>RESUME</Link>
       </nav>
-      <Link href="#top" className={styles.goUp}>GO UP</Link>
+      <button
+        className={styles.goUp}
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+      >
+        GO UP
+      </button>
     </footer>
   );
 }
