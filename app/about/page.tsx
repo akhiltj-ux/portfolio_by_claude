@@ -1,5 +1,5 @@
-import { Header, Footer } from "@/components/organisms/index";
-import AboutHero from "@/components/organisms/AboutHero";
+import { Header, Footer } from "@/components/sections";
+import AboutHero from "@/components/sections/AboutHero";
 import styles from "./page.module.css";
 
 export default function AboutPage() {

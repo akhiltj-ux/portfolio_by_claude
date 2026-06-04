@@ -1,4 +1,4 @@
-import { NavLink } from '@/components/atoms';
+import { NavLink } from '@/components/ui';
 import styles from './NavGroup.module.css';
 
 type NavGroupProps = {

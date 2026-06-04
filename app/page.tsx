@@ -1,4 +1,4 @@
-import { Header, Hero, ProjectGrid, Footer } from '@/components/organisms';
+import { Header, Hero, ProjectGrid, Footer } from '@/components/sections';
 
 export default function Home() {
   return (

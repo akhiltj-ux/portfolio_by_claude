@@ -1,5 +1,5 @@
 import Link from "next/link";
-import PolaroidStack from "@/components/molecules/PolaroidStack";
+import PolaroidStack from "@/components/PolaroidStack";
 import styles from "./AboutHero.module.css";
 
 export default function AboutHero() {

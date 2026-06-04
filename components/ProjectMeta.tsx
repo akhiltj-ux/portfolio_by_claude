@@ -1,4 +1,4 @@
-import { Tag } from '@/components/atoms';
+import { Tag } from '@/components/ui';
 import styles from './ProjectMeta.module.css';
 
 type ProjectMetaProps = {

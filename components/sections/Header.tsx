@@ -2,8 +2,8 @@
 
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { Logo, NavLink } from '@/components/atoms';
-import { NavGroup } from '@/components/molecules';
+import { Logo, NavLink } from '@/components/ui';
+import NavGroup from '@/components/NavGroup';
 import styles from './Header.module.css';
 
 type HeaderProps = {

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ProjectMeta } from '@/components/molecules';
+import ProjectMeta from '@/components/ProjectMeta';
 import styles from './ProjectCard.module.css';
 
 type ProjectCardProps = {

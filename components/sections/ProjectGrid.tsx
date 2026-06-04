@@ -1,5 +1,5 @@
 import { projects } from '@/lib/projects';
-import ProjectCard from './ProjectCard';
+import ProjectCard from '@/components/ProjectCard';
 import styles from './ProjectGrid.module.css';
 
 const bgColors = ['#FFECE5', '#E5FDEB', '#F0E5FF'];
