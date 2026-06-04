@@ -6,7 +6,7 @@ const bgColors = ['#FFECE5', '#E5FDEB', '#F0E5FF'];
 
 export default function ProjectGrid() {
   return (
-    <div className={styles.grid}>
+    <div id="projects" className={styles.grid}>
       {projects.map((project, index) => (
         <ProjectCard
           key={project.id}

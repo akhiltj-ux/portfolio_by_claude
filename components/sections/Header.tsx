@@ -12,7 +12,7 @@ type HeaderProps = {
 
 const mobileLinks = [
   { href: '/', label: 'HOME' },
-  { href: '/work', label: 'WORK' },
+  { href: '/#projects', label: 'WORK' },
   { href: '/about', label: 'ABOUT' },
   { href: '/resume', label: 'RESUME' },
 ] as const;

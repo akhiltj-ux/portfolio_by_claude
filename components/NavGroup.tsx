@@ -7,7 +7,7 @@ type NavGroupProps = {
 
 const links = [
   { label: 'HOME', href: '/' },
-  { label: 'WORK', href: '/work' },
+  { label: 'WORK', href: '/#projects' },
   { label: 'ABOUT', href: '/about' },
 ] as const;
 
