@@ -1,0 +1,40 @@
+.toc {
+  padding-top: 0.5rem;
+}
+
+.label {
+  font-family: var(--font-geist-mono);
+  font-size: 0.75rem;
+  color: #767676;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.item {
+}
+
+.nested {
+  padding-left: 0;
+}
+
+.link {
+  font-family: var(--font-geist-mono);
+  font-size: 0.8125rem;
+  color: #767676;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 150ms ease;
+}
+
+.link:hover,
+.active {
+  color: #000000;
+}

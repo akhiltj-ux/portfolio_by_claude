@@ -1,0 +1,46 @@
+.header {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.title {
+  font-family: var(--font-tiempos);
+  font-size: 2.75rem;
+  line-height: 3.125rem;
+  letter-spacing: -0.005em;
+}
+
+.meta {
+  display: flex;
+  gap: 1rem;
+  font-family: var(--font-geist-sans);
+  color: #767676;
+}
+
+.metaStack {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.metaLabel {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #000000;
+}
+
+.metaValue {
+  font-size: 0.875rem;
+}
+
+.metaItem {
+}
+
+.cover {
+  width: 100%;
+  height: auto;
+  display: block;
+}
