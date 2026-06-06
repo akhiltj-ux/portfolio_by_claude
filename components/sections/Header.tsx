@@ -2,13 +2,17 @@
 
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { Logo, NavLink } from '@/components/ui';
-import NavGroup from '@/components/NavGroup';
 import styles from './Header.module.css';
 
 type HeaderProps = {
   activePath: string;
 };
+
+const navLinks = [
+  { href: '/', label: 'WORK' },
+  { href: '/about', label: 'ABOUT' },
+  { href: '/contact', label: 'CONTACT' },
+] as const;
 
 const mobileLinks = [
   { href: '/', label: 'WORK' },
@@ -33,16 +37,24 @@ export default function Header({ activePath }: HeaderProps) {
     <header className={styles.header}>
       <div className={styles.topBar}>
         <Link href="/" className={styles.logoLink}>
-          <Logo />
+          AKHIL T J
         </Link>
 
-        <div className={styles.desktopNav}>
-          <NavGroup activePath={activePath} />
-        </div>
+        <nav className={styles.desktopNav}>
+          {navLinks.map(({ href, label }) => (
+            <Link
+              key={href}
+              href={href}
+              className={`${styles.navLink} ${activePath === href ? styles.active : ''}`}
+            >
+              {label}
+            </Link>
+          ))}
+        </nav>
 
-        <div className={styles.desktopResume}>
-          <NavLink href="/resume">RESUME</NavLink>
-        </div>
+        <Link href="/resume" className={styles.resumeLink}>
+          RESUME
+        </Link>
 
         <button
           className={styles.menuBtn}
@@ -57,15 +69,14 @@ export default function Header({ activePath }: HeaderProps) {
       {isMenuOpen && (
         <nav className={styles.overlay}>
           {mobileLinks.map(({ href, label }) => (
-            <div key={href} className={styles.overlayItem}>
-              <NavLink
-                href={href}
-                active={activePath === href}
-                onClick={closeMenu}
-              >
-                {label}
-              </NavLink>
-            </div>
+            <Link
+              key={href}
+              href={href}
+              onClick={closeMenu}
+              className={`${styles.overlayLink} ${activePath === href ? styles.active : ''}`}
+            >
+              {label}
+            </Link>
           ))}
         </nav>
       )}

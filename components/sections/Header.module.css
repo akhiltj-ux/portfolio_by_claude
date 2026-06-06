@@ -1,4 +1,3 @@
-/* ── Outer wrapper (sticky shell, no border) ─────────────── */
 .header {
   position: sticky;
   top: 0;
@@ -6,9 +5,6 @@
   z-index: 100;
 }
 
-/* ── Top bar row (flex layout + border) ──────────────────── */
-/* Fix 3: border lives here so it stays visible regardless    */
-/* of whether an overlay is rendered inside or outside header */
 .topBar {
   display: flex;
   flex-direction: row;
@@ -18,114 +14,74 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-/* ── Logo link wrapper (Fix 1) ───────────────────────────── */
 .logoLink {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: inherit;
-}
-
-/* Override Logo atom Tailwind utilities (specificity 0,1,1 > 0,1,0) */
-.logoLink :global(span) {
   font-family: var(--font-geist-mono);
-  font-weight: 400;
   font-size: 0.8125rem;
-  line-height: normal;
+  font-weight: 400;
   letter-spacing: 0;
   color: #000000;
+  text-decoration: none;
   transition: color 150ms ease, font-weight 150ms ease;
 }
 
-.logoLink:hover :global(span) {
+.logoLink:hover {
   color: #ff4000;
   font-weight: 500;
 }
 
-/* ── Nav links: HOME, WORK, ABOUT ────────────────────────── */
-.desktopNav :global(a) {
+.desktopNav {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+}
+
+.navLink {
   font-family: var(--font-geist-mono);
-  font-weight: 400;
   font-size: 0.8125rem;
-  line-height: normal;
-  letter-spacing: 0;
+  font-weight: 400;
   color: #767676;
+  text-decoration: none;
   transition: color 150ms ease, font-weight 150ms ease;
 }
 
-/* Covers both hover (inactive) and active states */
-.desktopNav :global(a:hover),
-.desktopNav :global(a.text-accent) {
+.navLink:hover,
+.navLink.active {
   color: #ff4000;
   font-weight: 500;
 }
 
-/* ── Resume link ─────────────────────────────────────────── */
-.desktopResume :global(a) {
+.resumeLink {
   font-family: var(--font-geist-mono);
-  font-weight: 400;
   font-size: 0.8125rem;
-  line-height: normal;
-  letter-spacing: 0;
+  font-weight: 400;
   color: #767676;
+  text-decoration: none;
   transition: color 150ms ease, font-weight 150ms ease;
 }
 
-.desktopResume :global(a:hover) {
+.resumeLink:hover {
   color: #ff4000;
   font-weight: 500;
 }
 
-/* ── MENU / CLOSE button ─────────────────────────────────── */
 .menuBtn {
   display: none;
+  font-family: var(--font-geist-mono);
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: #767676;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color 150ms ease, font-weight 150ms ease;
 }
 
-/* ── Tablet: 768px–1023px ────────────────────────────────── */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .topBar {
-    padding: 1.25rem;
-  }
-
-  .desktopNav :global(nav) {
-    gap: 1.5rem;
-  }
+.menuBtn:hover {
+  color: #ff4000;
+  font-weight: 500;
 }
 
-/* ── Mobile: below 768px ─────────────────────────────────── */
-@media (max-width: 767px) {
-  .topBar {
-    padding: 1.25rem;
-  }
-
-  .desktopNav,
-  .desktopResume {
-    display: none;
-  }
-
-  /* Fix 2: default colour is #767676, not #000000 */
-  .menuBtn {
-    display: block;
-    font-family: var(--font-geist-mono);
-    font-weight: 400;
-    font-size: 0.8125rem;
-    line-height: normal;
-    letter-spacing: 0;
-    color: #767676;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    transition: color 150ms ease, font-weight 150ms ease;
-  }
-
-  .menuBtn:hover {
-    color: #ff4000;
-    font-weight: 500;
-  }
-}
-
-/* ── Mobile overlay ──────────────────────────────────────── */
 .overlay {
   position: absolute;
   left: 0;
@@ -136,24 +92,36 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-.overlayItem {
-  padding: 1.25rem 1.5rem;
-}
-
-/* Overlay nav links — same rules as desktop nav */
-.overlayItem :global(a) {
+.overlayLink {
   display: block;
+  padding: 1.25rem;
   font-family: var(--font-geist-mono);
-  font-weight: 400;
   font-size: 0.8125rem;
-  line-height: normal;
-  letter-spacing: 0;
+  font-weight: 400;
   color: #767676;
+  text-decoration: none;
   transition: color 150ms ease, font-weight 150ms ease;
 }
 
-.overlayItem :global(a:hover),
-.overlayItem :global(a.text-accent) {
+.overlayLink:hover,
+.overlayLink.active {
   color: #ff4000;
   font-weight: 500;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .desktopNav {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .desktopNav,
+  .resumeLink {
+    display: none;
+  }
+
+  .menuBtn {
+    display: block;
+  }
 }
