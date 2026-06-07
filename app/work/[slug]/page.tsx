@@ -31,7 +31,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
 
   return (
     <>
-      <Header activePath="/" />
+      <Header activePath={`/work/${params.slug}`} />
       <ProjectLayout frontmatter={frontmatter} headings={headings}>
         <MDXRemote
           source={content}
