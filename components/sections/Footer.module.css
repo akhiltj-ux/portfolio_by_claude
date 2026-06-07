@@ -25,7 +25,9 @@
 .navLink {
   color: #767676;
   text-decoration: none;
-  transition: color 150ms ease, font-weight 150ms ease;
+  transition:
+    color 150ms ease,
+    font-weight 150ms ease;
 }
 
 .navLink:hover {
@@ -34,10 +36,15 @@
 }
 
 .goUp {
+  font-family: var(--font-geist-mono);
   justify-self: end;
   color: #ff4000;
   font-weight: 500;
   text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {

@@ -15,10 +15,7 @@
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
-}
-
-.item {
+  gap: 0.5rem;
 }
 
 .nested {
@@ -36,5 +33,6 @@
 
 .link:hover,
 .active {
-  color: #000000;
+  color: #ff4000;
+  font-weight: 500;
 }

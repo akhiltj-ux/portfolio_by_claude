@@ -11,12 +11,13 @@
   font-size: 2.75rem;
   line-height: 3.125rem;
   letter-spacing: -0.005em;
+  font-weight: 500;
 }
 
 .meta {
   display: flex;
   gap: 1rem;
-  font-family: var(--font-geist-sans);
+  font-family: var(--font-geist);
   color: #767676;
 }
 
@@ -24,19 +25,18 @@
   display: flex;
   flex-direction: column;
   flex: 1;
+  gap: 0.15rem;
 }
 
 .metaLabel {
   font-size: 0.875rem;
   font-weight: 500;
   color: #000000;
+  margin-bottom: 0.35rem;
 }
 
 .metaValue {
   font-size: 0.875rem;
-}
-
-.metaItem {
 }
 
 .cover {

@@ -16,7 +16,7 @@ export const projects: Project[] = [
     alt: 'Onboarding flow screens showing step-by-step user registration',
     title: 'Reimagining Competitive Exam Preparation: An AI Powered Study Tool for UPSC Aspirants',
     tags: ['UX Research', 'Interaction Design', 'Figma'],
-    href: '/projects/onboarding',
+    href: '/work/onboarding',
   },
   {
     id: '02',
@@ -25,7 +25,7 @@ export const projects: Project[] = [
     alt: 'Design system component library with tokens and documentation',
     title: 'Building a Design System from the Ground Up',
     tags: ['Design Systems', 'Component Library', 'Documentation'],
-    href: '/projects/design-system',
+    href: '/work/design-system',
   },
   {
     id: '03',
@@ -34,6 +34,6 @@ export const projects: Project[] = [
     alt: 'Mobile navigation patterns with bottom tab bar and gesture interactions',
     title: 'Redesigning Mobile Navigation Patterns',
     tags: ['Mobile UX', 'Prototyping', 'User Testing'],
-    href: '/projects/navigation',
+    href: '/work/navigation',
   },
 ];
