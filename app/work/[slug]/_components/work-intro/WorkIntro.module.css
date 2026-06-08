@@ -44,3 +44,19 @@
   height: auto;
   display: block;
 }
+
+@media (max-width: 767px) {
+  .header {
+    gap: 1.5rem;
+  }
+
+  .title {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  .meta {
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+}

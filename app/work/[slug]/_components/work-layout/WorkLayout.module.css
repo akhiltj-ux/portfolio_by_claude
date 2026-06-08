@@ -1,3 +1,7 @@
+.main {
+  overflow-x: hidden;
+}
+
 .body {
   display: grid;
   grid-template-columns: max-content 1fr;
@@ -38,9 +42,27 @@
 @media (max-width: 1023px) {
   .body {
     grid-template-columns: 1fr;
+    width: 100%;
+    gap: 3rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
 
   .sidebar {
-    position: static;
+    display: none;
+  }
+
+  .content {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .body {
+    gap: 2rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
