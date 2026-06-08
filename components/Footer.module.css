@@ -37,6 +37,7 @@
 
 .goUp {
   font-family: var(--font-geist-mono);
+  font-size: inherit;
   justify-self: end;
   color: #ff4000;
   font-weight: 500;
