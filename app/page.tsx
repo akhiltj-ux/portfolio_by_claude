@@ -1,12 +1,11 @@
-import { Header, Hero, WorkGrid, Footer } from '@/components/sections';
+import HomeHero from './_components/home-hero/HomeHero';
+import HomeGrid from './_components/home-grid/HomeGrid';
 
 export default function Home() {
   return (
     <>
-      <Header activePath="/" />
-      <Hero />
-      <WorkGrid />
-      <Footer />
+      <HomeHero />
+      <HomeGrid />
     </>
   );
 }

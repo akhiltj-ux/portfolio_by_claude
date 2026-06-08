@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import WorkMeta from '@/components/WorkMeta';
-import styles from './WorkCard.module.css';
+import HomeCardPills from '../home-card-pills/HomeCardPills';
+import styles from './HomeCard.module.css';
 
-type WorkCardProps = {
+type HomeCardProps = {
   image: string;
   alt: string;
   title: string;
@@ -12,7 +12,7 @@ type WorkCardProps = {
   href: string;
 };
 
-export default function WorkCard({
+export default function HomeCard({
   image,
   alt,
   title,
@@ -20,7 +20,7 @@ export default function WorkCard({
   bgColor,
   imageSide,
   href,
-}: WorkCardProps) {
+}: HomeCardProps) {
   return (
     <Link
       href={href}
@@ -31,7 +31,7 @@ export default function WorkCard({
         <img src={image} alt={alt} className={styles.image} />
       </div>
       <div className={styles.panel} style={{ backgroundColor: bgColor }}>
-        <WorkMeta tags={tags} />
+        <HomeCardPills tags={tags} />
         <h3 className={styles.title}>{title}</h3>
       </div>
     </Link>

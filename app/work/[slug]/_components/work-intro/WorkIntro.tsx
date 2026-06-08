@@ -1,11 +1,11 @@
 import type { WorkFrontmatter } from '@/lib/mdx';
-import styles from './WorkHeader.module.css';
+import styles from './WorkIntro.module.css';
 
 type Props = {
   frontmatter: WorkFrontmatter;
 };
 
-export default function WorkHeader({ frontmatter }: Props) {
+export default function WorkIntro({ frontmatter }: Props) {
   const { title, role, skills, timeline, team, cover } = frontmatter;
   return (
     <header className={styles.header}>

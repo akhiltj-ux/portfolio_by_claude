@@ -1,14 +1,14 @@
 import { works } from '@/lib/works';
-import WorkCard from '@/components/WorkCard';
-import styles from './WorkGrid.module.css';
+import HomeCard from '../home-card/HomeCard';
+import styles from './HomeGrid.module.css';
 
 const bgColors = ['#FFECE5', '#E5FDEB', '#F0E5FF'];
 
-export default function WorkGrid() {
+export default function HomeGrid() {
   return (
     <div id="works" className={styles.grid}>
       {works.map((work, index) => (
-        <WorkCard
+        <HomeCard
           key={work.id}
           image={work.image}
           alt={work.alt}

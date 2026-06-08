@@ -11,7 +11,6 @@ export type WorkFrontmatter = {
   timeline: string;
   team: string[];
   cover: string;
-  excerpt: string;
 };
 
 export type Heading = {

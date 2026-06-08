@@ -7,6 +7,8 @@ import {
   tiemposText,
 } from "@/lib/fonts";
 import ScrollToTop from "@/components/ScrollToTop";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -25,7 +27,9 @@ export default function RootLayout({
         className={`${ebGaramond.variable} ${jetBrainsMono.variable} ${geistMono.variable} ${geist.variable} ${tiemposText.variable}`}
       >
         <ScrollToTop />
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

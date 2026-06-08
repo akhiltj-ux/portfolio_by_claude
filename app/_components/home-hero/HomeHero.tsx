@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import styles from './Hero.module.css';
+import styles from './HomeHero.module.css';
 
-export default function Hero() {
+export default function HomeHero() {
   return (
     <section className={styles.hero}>
       <p className={styles.name}>Akhil T J</p>

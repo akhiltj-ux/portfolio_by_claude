@@ -1,12 +1,9 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import styles from './Header.module.css';
-
-type HeaderProps = {
-  activePath: string;
-};
 
 const navLinks = [
   { href: '/', label: 'WORK' },
@@ -21,7 +18,8 @@ const mobileLinks = [
   { href: '/resume', label: 'RESUME' },
 ] as const;
 
-export default function Header({ activePath }: HeaderProps) {
+export default function Header() {
+  const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const closeMenu = () => setIsMenuOpen(false);
 
@@ -45,7 +43,7 @@ export default function Header({ activePath }: HeaderProps) {
             <Link
               key={href}
               href={href}
-              className={`${styles.navLink} ${activePath === href ? styles.active : ''}`}
+              className={`${styles.navLink} ${pathname === href ? styles.active : ''}`}
             >
               {label}
             </Link>
@@ -73,7 +71,7 @@ export default function Header({ activePath }: HeaderProps) {
               key={href}
               href={href}
               onClick={closeMenu}
-              className={`${styles.overlayLink} ${activePath === href ? styles.active : ''}`}
+              className={`${styles.overlayLink} ${pathname === href ? styles.active : ''}`}
             >
               {label}
             </Link>

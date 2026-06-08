@@ -1,6 +1,6 @@
 import type { WorkFrontmatter, Heading } from '@/lib/mdx';
-import WorkHeader from './WorkHeader';
-import TableOfContents from './TableOfContents';
+import WorkIntro from '../work-intro/WorkIntro';
+import WorkToc from '../work-toc/WorkToc';
 import styles from './WorkLayout.module.css';
 
 type Props = {
@@ -14,10 +14,10 @@ export default function WorkLayout({ frontmatter, headings, children }: Props) {
     <main className={styles.main}>
       <div className={styles.body}>
         <aside className={styles.sidebar}>
-          <TableOfContents headings={headings} />
+          <WorkToc headings={headings} />
         </aside>
         <div className={styles.content}>
-          <WorkHeader frontmatter={frontmatter} />
+          <WorkIntro frontmatter={frontmatter} />
           <article className={styles.article}>
             {children}
           </article>

@@ -1,11 +1,11 @@
 import { Tag } from '@/components/ui';
-import styles from './WorkMeta.module.css';
+import styles from './HomeCardPills.module.css';
 
-type WorkMetaProps = {
+type HomeCardPillsProps = {
   tags: string[];
 };
 
-export default function WorkMeta({ tags }: WorkMetaProps) {
+export default function HomeCardPills({ tags }: HomeCardPillsProps) {
   return (
     <div className={styles.tags}>
       {tags.map((tag) => (

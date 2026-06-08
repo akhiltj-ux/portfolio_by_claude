@@ -2,13 +2,13 @@
 
 import { useEffect, useState } from 'react';
 import type { Heading } from '@/lib/mdx';
-import styles from './TableOfContents.module.css';
+import styles from './WorkToc.module.css';
 
 type Props = {
   headings: Heading[];
 };
 
-export default function TableOfContents({ headings }: Props) {
+export default function WorkToc({ headings }: Props) {
   const [activeId, setActiveId] = useState<string>('');
 
   useEffect(() => {
