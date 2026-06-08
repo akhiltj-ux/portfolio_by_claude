@@ -3,8 +3,8 @@ import { MDXRemote } from 'next-mdx-remote/rsc';
 import rehypeSlug from 'rehype-slug';
 import { getWork, getWorkSlugs } from '@/lib/mdx';
 import WorkLayout from './_components/work-layout/WorkLayout';
-import { mdxComponents } from './_components/mdxComponents';
-import { rehypeSectionizeWork } from './_components/rehypeSectionizeWork';
+import { mdxComponents } from './_components/MdxComponents';
+import { mdxContainerisePlugin } from './_components/MdxContainerisePlugin';
 
 export function generateStaticParams() {
   return getWorkSlugs().map((slug) => ({ slug }));
@@ -34,7 +34,7 @@ export default function WorkPage({ params }: { params: { slug: string } }) {
       <MDXRemote
         source={content}
         components={mdxComponents}
-        options={{ mdxOptions: { rehypePlugins: [rehypeSlug, rehypeSectionizeWork] } }}
+        options={{ mdxOptions: { rehypePlugins: [rehypeSlug, mdxContainerisePlugin] } }}
       />
     </WorkLayout>
   );

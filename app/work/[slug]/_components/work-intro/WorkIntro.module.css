@@ -56,7 +56,8 @@
   }
 
   .meta {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
     gap: 1.25rem;
   }
 }
