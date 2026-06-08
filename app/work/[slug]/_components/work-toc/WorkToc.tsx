@@ -1,44 +1,56 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import type { Heading } from '@/lib/mdx';
-import styles from './WorkToc.module.css';
+import { useEffect, useState, type MouseEvent } from "react";
+import type { Heading } from "@/lib/mdx";
+import styles from "./WorkToc.module.css";
 
 type Props = {
   headings: Heading[];
 };
 
+// Must match the `scroll-margin-top` on .heading in MdxElements.module.css —
+// both represent the sticky header's height plus breathing room.
+const SCROLL_OFFSET = 100;
+
 export default function WorkToc({ headings }: Props) {
-  const [activeId, setActiveId] = useState<string>('');
+  const [activeId, setActiveId] = useState<string>("");
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            setActiveId(entry.target.id);
-          }
+    const updateActiveHeading = () => {
+      let currentId = "";
+      for (const { id } of headings) {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top <= SCROLL_OFFSET) {
+          currentId = id;
         }
-      },
-      { rootMargin: '0px 0px -80% 0px' }
-    );
+      }
+      setActiveId(currentId);
+    };
 
-    headings.forEach(({ id }) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
-
-    return () => observer.disconnect();
+    updateActiveHeading();
+    window.addEventListener("scroll", updateActiveHeading, { passive: true });
+    return () => window.removeEventListener("scroll", updateActiveHeading);
   }, [headings]);
+
+  const handleClick = (e: MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    document
+      .getElementById(id)
+      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
 
   return (
     <nav className={styles.toc}>
       <ul className={styles.list}>
         {headings.map(({ id, text, level }) => (
-          <li key={id} className={`${styles.item} ${level === 3 ? styles.nested : ''}`}>
+          <li
+            key={id}
+            className={`${styles.item} ${level === 3 ? styles.nested : ""}`}
+          >
             <a
               href={`#${id}`}
-              className={`${styles.link} ${activeId === id ? styles.active : ''}`}
+              onClick={(e) => handleClick(e, id)}
+              className={`${styles.link} ${activeId === id ? styles.active : ""}`}
             >
               {text}
             </a>

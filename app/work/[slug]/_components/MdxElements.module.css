@@ -5,7 +5,8 @@
   letter-spacing: 0;
   font-weight: 500;
   color: #000000;
-  margin-bottom: 0.5rem;
+  /* Keeps the heading clear of the sticky header on scrollIntoView/anchor jumps — must match SCROLL_OFFSET in WorkToc.tsx */
+  scroll-margin-top: 6rem;
 }
 
 .text {
@@ -15,5 +16,4 @@
   letter-spacing: 0;
   font-weight: 400;
   color: #767676;
-  margin-bottom: 4rem;
 }

@@ -23,6 +23,16 @@
 }
 
 .article {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* Each individual "## heading + content" group */
+.article > section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 @media (max-width: 1023px) {

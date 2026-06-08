@@ -4,6 +4,7 @@ import rehypeSlug from 'rehype-slug';
 import { getWork, getWorkSlugs } from '@/lib/mdx';
 import WorkLayout from './_components/work-layout/WorkLayout';
 import { mdxComponents } from './_components/mdxComponents';
+import { rehypeSectionizeWork } from './_components/rehypeSectionizeWork';
 
 export function generateStaticParams() {
   return getWorkSlugs().map((slug) => ({ slug }));
@@ -33,7 +34,7 @@ export default function WorkPage({ params }: { params: { slug: string } }) {
       <MDXRemote
         source={content}
         components={mdxComponents}
-        options={{ mdxOptions: { rehypePlugins: [rehypeSlug] } }}
+        options={{ mdxOptions: { rehypePlugins: [rehypeSlug, rehypeSectionizeWork] } }}
       />
     </WorkLayout>
   );
