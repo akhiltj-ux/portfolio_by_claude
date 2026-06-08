@@ -1,4 +1,4 @@
-export type Project = {
+export type Work = {
   id: string;
   slug: string;
   image: string;
@@ -8,7 +8,7 @@ export type Project = {
   href: string;
 };
 
-export const projects: Project[] = [
+export const works: Work[] = [
   {
     id: '01',
     slug: 'onboarding',

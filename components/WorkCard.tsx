@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import ProjectMeta from '@/components/ProjectMeta';
-import styles from './ProjectCard.module.css';
+import WorkMeta from '@/components/WorkMeta';
+import styles from './WorkCard.module.css';
 
-type ProjectCardProps = {
+type WorkCardProps = {
   image: string;
   alt: string;
   title: string;
@@ -12,7 +12,7 @@ type ProjectCardProps = {
   href: string;
 };
 
-export default function ProjectCard({
+export default function WorkCard({
   image,
   alt,
   title,
@@ -20,7 +20,7 @@ export default function ProjectCard({
   bgColor,
   imageSide,
   href,
-}: ProjectCardProps) {
+}: WorkCardProps) {
   return (
     <Link
       href={href}
@@ -31,7 +31,7 @@ export default function ProjectCard({
         <img src={image} alt={alt} className={styles.image} />
       </div>
       <div className={styles.panel} style={{ backgroundColor: bgColor }}>
-        <ProjectMeta tags={tags} />
+        <WorkMeta tags={tags} />
         <h3 className={styles.title}>{title}</h3>
       </div>
     </Link>

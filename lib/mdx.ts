@@ -2,9 +2,9 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 
-const PROJECTS_DIR = path.join(process.cwd(), 'content/projects');
+const WORKS_DIR = path.join(process.cwd(), 'content/works');
 
-export type ProjectFrontmatter = {
+export type WorkFrontmatter = {
   title: string;
   role: string;
   skills: string[];
@@ -20,23 +20,23 @@ export type Heading = {
   id: string;
 };
 
-export function getProjectSlugs(): string[] {
+export function getWorkSlugs(): string[] {
   return fs
-    .readdirSync(PROJECTS_DIR)
+    .readdirSync(WORKS_DIR)
     .filter((f) => f.endsWith('.mdx'))
     .map((f) => f.replace('.mdx', ''));
 }
 
-export function getProject(slug: string): {
-  frontmatter: ProjectFrontmatter;
+export function getWork(slug: string): {
+  frontmatter: WorkFrontmatter;
   content: string;
   headings: Heading[];
 } {
-  const filePath = path.join(PROJECTS_DIR, `${slug}.mdx`);
+  const filePath = path.join(WORKS_DIR, `${slug}.mdx`);
   const raw = fs.readFileSync(filePath, 'utf-8');
   const { data, content } = matter(raw);
   return {
-    frontmatter: data as ProjectFrontmatter,
+    frontmatter: data as WorkFrontmatter,
     content,
     headings: extractHeadings(content),
   };

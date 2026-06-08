@@ -1,11 +1,11 @@
 import { Tag } from '@/components/ui';
-import styles from './ProjectMeta.module.css';
+import styles from './WorkMeta.module.css';
 
-type ProjectMetaProps = {
+type WorkMetaProps = {
   tags: string[];
 };
 
-export default function ProjectMeta({ tags }: ProjectMetaProps) {
+export default function WorkMeta({ tags }: WorkMetaProps) {
   return (
     <div className={styles.tags}>
       {tags.map((tag) => (

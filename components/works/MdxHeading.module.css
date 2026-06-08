@@ -1,0 +1,9 @@
+.heading {
+  font-family: var(--font-tiempos);
+  font-size: 1.5rem;
+  line-height: normal;
+  letter-spacing: 0;
+  font-weight: 500;
+  color: #000000;
+  margin-bottom: 0.5rem;
+}
